@@ -1,0 +1,30 @@
+body {
+    background-color: teal;
+    color: lightblue;
+    text-decoration: underline;
+    text-decoration-color: rgb(255, 160, 142);
+}
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.ad-left, .ad-right {
+  width: 150px;
+  background-color: #f0f0f0;
+  padding: 10px;
+  text-align: center;
+}
+
+.content {
+  flex: 1;
+  margin: 0 10px;
+  background-color: #fff;
+  padding: 20px;
+  border: 1px solid #ddd;
+}   
