@@ -31,3 +31,11 @@ body {
   padding: 20px;
   border: 1px solid #ddd;
 }
+.noNewLine {
+  display: inline;
+}
+.gabiDoesContainersForChange {
+  display: inline;
+  text-align: right;
+  float: right;
+}
