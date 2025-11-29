@@ -23,13 +23,15 @@
             <p>[ads]</p>
         </div> -->
         <div class="content">
-            <h1>
-            Dear Recipient,<br>
-            you have received a card from Gabriela.<br>
-            Congratulations!<br>
-            Cyberly regards,<br>
-            Gabriela
-            </h1>
+            <div class="main">
+                <h1>
+                    Dear Recipient,<br>
+                    you have received a card from Gabriela.<br>
+                    Congratulations!<br>
+                    Cyberly regards,<br>
+                    Gabriela
+                </h1>
+            </div>
         </div>
         <!-- <div class="ad-right">
             [ads]
@@ -38,10 +40,23 @@
     <footer>
         <div class="container">
             <div class="content">
-                <p class="noNewLine">Support through these services: <a href="https://www.beemit.com.au/app/pay?source=payment-link&amount=500&description=donation&handle=gabglo">Beem</a> <a href="">other site</a>.</p>
+                <p class="noNewLine">Support through these services: <a href="#" id="beemLink" target="_blank">Beem</a>, <a href="">other site</a>.</p>
                 <p class="gabiDoesContainersForChange"><img width="100px" src="barcode.png" alt="C10999339" class="gabiDoesContainersForChange"></img> Gabi does containers for change:&nbsp;&nbsp;</p>
             </div>
         </div>
     </footer>
+    <div id="beemModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Send Support via Beem</h2>
+
+            <label for="amountInput">Enter amount (in dollars): </label>
+            <input type="number" id="amountInput" min="1.00" step="0.01" placeholder="5.00">
+
+            <button id="beemNextBtn">Next</button>
+        </div>
+    </div>
+<script src="scripts.js"></script>
 </body>
 </html>
+
