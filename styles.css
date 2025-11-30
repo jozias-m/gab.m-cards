@@ -14,11 +14,18 @@
   --txtdecclr: color-mix(in srgb, rgb(255, 160, 142) 50%, #000 50%);
 }
 
+::-webkit-scrollbar {
+  display: none;
+}
+
 body {
   background-color: var(--bgd-Color);
   color: var(--textColor);
   /* overflow-x: hidden; */
   overflow-x: scroll;
+}
+.mainContent {
+  min-height: 100vh;
 }
 
 .main {

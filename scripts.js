@@ -11,9 +11,13 @@ let darkMode;
 
 
 function onload() {
+    if (!window.location.href.includes('#')) {
+        window.location.href = window.location.href + "#main";
+    }
+
     darkMode = localStorage.getItem("darkMode");
     if (darkMode === null) {
-        darkMode = true;
+        darkMode = false;
     } else {
         darkMode = (darkMode === "true");
     }

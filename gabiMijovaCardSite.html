@@ -15,7 +15,8 @@
     <script async custom-element="amp-auto-ads" src="https://cdn.ampproject.org/v0/amp-auto-ads-0.1.js"></script>
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1359153416365880" crossorigin="anonymous"></script>
 </head>
-<body class="darkMode">
+<body class="lightMode">
+    <amp-auto-ads type="adsense" data-ad-client="ca-pub-1359153416365880"></amp-auto-ads>
     <header>
         <div class="container2">
             <div class="content2">
@@ -23,35 +24,36 @@
             </div>
         </div>
     </header>
-    <amp-auto-ads type="adsense" data-ad-client="ca-pub-1359153416365880"></amp-auto-ads>
-    <div class="container">
-        <!-- <div class="ad-left">
-            <p>[ads]</p>
-        </div> -->
-        <div class="content">
-            <div class="main">
-                <h1>
-                    Dear Recipient,<br>
-                    you have received a card from Gabriela.<br>
-                    Congratulations!<br>
-                    Cyberly regards,<br>
-                    Gabriela
-                </h1>
-            </div>
-        </div>
-        <!-- <div class="ad-right">
-            [ads]
-        </div> -->
-    </div>
-    <footer>
+    <div class="mainContent">
         <div class="container">
+            <!-- <div class="ad-left">
+                <p>[ads]</p>
+            </div> -->
             <div class="content">
-                <p class="noNewLine">Support through these services: <a href="#" id="beemLink" target="_blank">Beem</a>, <a id="otherSiteLink" href="#">other site</a>.</p>
-                <p class="noNewLine">You can also share this website <a href="./qrcode.html">here</a>.</p>
-                <p class="gabiDoesContainersForChange"><img width="100px" src="barcode.png" alt="C10999339" class="gabiDoesContainersForChange"></img> Gabi does containers for change:&nbsp;&nbsp;</p>
+                <div id="main" class="main">
+                    <h1>
+                        Dear Recipient,<br>
+                        you have received a card from Gabriela.<br>
+                        Congratulations!<br>
+                        Cyberly regards,<br>
+                        Gabriela
+                    </h1>
+                </div>
             </div>
+            <!-- <div class="ad-right">
+                [ads]
+            </div> -->
         </div>
-    </footer>
+        <footer>
+            <div class="container">
+                <div class="content">
+                    <p class="noNewLine">Support through these services: <a href="#" id="beemLink" target="_blank">Beem</a>, <a id="otherSiteLink" href="#main">other site</a>.</p>
+                    <p class="noNewLine">You can also share this website <a href="./qrcode.html">here</a>.</p>
+                    <p class="gabiDoesContainersForChange"><img width="100px" src="barcode.png" alt="C10999339" class="gabiDoesContainersForChange"></img> Gabi does containers for change:&nbsp;&nbsp;</p>
+                </div>
+            </div>
+        </footer>
+    </div>
     <div id="beemModal" class="modal">
         <div class="modal-content">
             <span class="close">&times;</span>
