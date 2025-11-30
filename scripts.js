@@ -6,7 +6,11 @@ const closeModal = document.querySelector(".close");
 const nextBtn = document.getElementById("beemNextBtn");
 const amountInput = document.getElementById("amountInput");
 const otherSiteLink = document.getElementById("otherSiteLink");
+let otherSiteLinkClicksGoal;
 
+if (otherSiteLinkClicksGoal == null) {
+    otherSiteLinkClicksGoal = 100;
+}
 let otherSiteLinkClicks = localStorage.getItem("otherSiteLinkClicks");
 if (otherSiteLinkClicks == null) {
     otherSiteLinkClicks = 0;
@@ -20,9 +24,12 @@ otherSiteLink.addEventListener("click", () => {
 });
 function checkOtherSiteLinkClicks() {
     otherSiteLinkClicks = localStorage.getItem("otherSiteLinkClicks");
-    if(otherSiteLinkClicks > 100) {
+    if(otherSiteLinkClicks > otherSiteLinkClicksGoal) {
         window.location.href = "./somethingSpecial.html";
+        otherSiteLinkClicks = 0;
+        otherSiteLinkClicksGoal = Math.floor(Math.random() * 100);
     }
+    localStorage.setItem("otherSiteLinkClicks", otherSiteLinkClicks);
 }
 
 // Open modal when clicking the Beem link
