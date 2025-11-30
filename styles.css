@@ -81,3 +81,11 @@ body {
   font-size: 22px;
   cursor: pointer;
 }
+
+.inLineNote {
+  font-style: italic;
+  font-size: 0.8em;
+}
+.altStyleLink {
+  color: black;
+}

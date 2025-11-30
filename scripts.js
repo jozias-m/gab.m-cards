@@ -5,6 +5,25 @@ const modal = document.getElementById("beemModal");
 const closeModal = document.querySelector(".close");
 const nextBtn = document.getElementById("beemNextBtn");
 const amountInput = document.getElementById("amountInput");
+const otherSiteLink = document.getElementById("otherSiteLink");
+
+let otherSiteLinkClicks = localStorage.getItem("otherSiteLinkClicks");
+if (otherSiteLinkClicks == null) {
+    otherSiteLinkClicks = 0;
+    localStorage.setItem("otherSiteLinkClicks", 0);
+}
+
+otherSiteLink.addEventListener("click", () => {
+    otherSiteLinkClicks++;
+    localStorage.setItem("otherSiteLinkClicks", otherSiteLinkClicks);
+    checkOtherSiteLinkClicks();
+});
+function checkOtherSiteLinkClicks() {
+    otherSiteLinkClicks = localStorage.getItem("otherSiteLinkClicks");
+    if(otherSiteLinkClicks > 100) {
+        window.location.href = "./somethingSpecial.html";
+    }
+}
 
 // Open modal when clicking the Beem link
 beemLink.addEventListener("click", function(event) {
