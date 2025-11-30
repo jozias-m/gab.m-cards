@@ -7,21 +7,41 @@ const nextBtn = document.getElementById("beemNextBtn");
 const amountInput = document.getElementById("amountInput");
 const otherSiteLink = document.getElementById("otherSiteLink");
 let otherSiteLinkClicksGoal;
+let darkMode;
 
-if (otherSiteLinkClicksGoal == null) {
-    otherSiteLinkClicksGoal = 100;
-}
-let otherSiteLinkClicks = localStorage.getItem("otherSiteLinkClicks");
-if (otherSiteLinkClicks == null) {
-    otherSiteLinkClicks = 0;
-    localStorage.setItem("otherSiteLinkClicks", 0);
+
+function onload() {
+    darkMode = localStorage.getItem("darkMode");
+    if (darkMode === null) {
+        darkMode = true;
+    } else {
+        darkMode = (darkMode === "true");
+    }
+    if (darkMode == true || darkMode == 'true') {
+            document.body.classList.add("darkMode");
+            document.body.classList.remove("lightMode");
+    }else{
+            document.body.classList.add("lightMode");
+            document.body.classList.remove("darkMode");
+    }
+
+    if (otherSiteLinkClicksGoal == null) {
+        otherSiteLinkClicksGoal = 100;
+    }
+    let otherSiteLinkClicks = localStorage.getItem("otherSiteLinkClicks");
+    if (otherSiteLinkClicks == null) {
+        otherSiteLinkClicks = 0;
+        localStorage.setItem("otherSiteLinkClicks", 0);
+    }
+
+    otherSiteLink.addEventListener("click", () => {
+        otherSiteLinkClicks++;
+        localStorage.setItem("otherSiteLinkClicks", otherSiteLinkClicks);
+        checkOtherSiteLinkClicks();
+    });
 }
 
-otherSiteLink.addEventListener("click", () => {
-    otherSiteLinkClicks++;
-    localStorage.setItem("otherSiteLinkClicks", otherSiteLinkClicks);
-    checkOtherSiteLinkClicks();
-});
+
 function checkOtherSiteLinkClicks() {
     otherSiteLinkClicks = localStorage.getItem("otherSiteLinkClicks");
     if(otherSiteLinkClicks > otherSiteLinkClicksGoal) {
@@ -66,3 +86,20 @@ nextBtn.addEventListener("click", () => {
         window.open(url, "_blank");
     }
 });
+
+
+// Darkmode toggle
+function toggleDarkMode() {
+    if (darkMode == true) {
+        darkMode = false;
+    }else{
+        darkMode = true;
+    }
+    localStorage.setItem("darkMode", darkMode)
+    var element = document.body;
+    element.classList.toggle("darkMode");
+    element.classList.toggle("lightMode");
+    console.log(darkMode);
+}
+
+onload();
